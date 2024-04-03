@@ -1,10 +1,9 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import './App.css';
 
 
 
 
-function App() {
+function Market() {
 
   return (
     <div className="App">
@@ -16,7 +15,7 @@ function App() {
           <div className="sigin">Fake Store</div>
           <div className="sigin">
             <NavLink to={`/`}>Главная</NavLink>
-            <NavLink to={`/contacts`}>Контакты</NavLink>
+            <NavLink to='/contacts'>Контакты</NavLink>
             <NavLink to='/market/basket'>Корзина</NavLink>
           </div>
     </div>
@@ -29,7 +28,7 @@ function App() {
             <NavLink to={`/market/womens-clothing`}>Женская одежда</NavLink>
       </div>
       <div  className='content'>
-            Slider
+              <Outlet/>
       </div>
   
     </div>
@@ -40,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Market;
