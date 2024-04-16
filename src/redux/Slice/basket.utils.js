@@ -15,10 +15,10 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     return [...cartItems, { ...cartItemToAdd,  quantity: 1 }];
   }
 
-export const fetchProducts = createAsyncThunk('cart/fetchComents',
+export const fetchProducts = createAsyncThunk('basket/fetchProducts',
 async(_,{rejectWithValue})=>{
     try{
-        const response = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=5');
+        const response = await fetch('https://fakestoreapi.com/products/');
         console.log(response);
        if(!response.ok){
         throw new Error( 'Server Error!')

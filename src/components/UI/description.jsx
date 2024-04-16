@@ -4,7 +4,7 @@ import { useGetProductsIdQuery, useGetProductsQuery } from '../../redux/apiProdu
 
 export default function Description() {
 
-    const productId = useParams()
+     const productId = useParams()
      const prod = productId.productId
     
     const {data: product, isLoading, error} = useGetProductsIdQuery(prod)
@@ -13,7 +13,7 @@ export default function Description() {
     return(
         <div className="Desc">
            {product && <div>{product.title}
-           <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore a beatae obcaecati nulla possimus quos facilis ex harum nihil ad.</h4>
+           <h4>{product.description}</h4>
            </div>}
         
         </div>

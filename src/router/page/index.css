@@ -1,0 +1,55 @@
+.Cataloge{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.App {
+    /* text-align: center; */
+    font-family: "Rubik-Bold";
+  }
+  .App a{
+    text-decoration: none;
+   
+  }
+  .Header{
+    height: 160px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(12, 5, 100, 1);
+    color: white;
+  }
+  
+  .Header a{
+    margin-left: 10px;
+    color: aqua;
+  }
+  .Content-wrapper{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .content{
+    margin: auto;
+    width:1030px;
+ 
+  }
+  
+  .footer{
+    margin: 20px;
+    padding: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

@@ -1,0 +1,13 @@
+.img {
+  width: 100%;
+  margin: 0;
+  height: 560px;
+  color: #fff;
+  line-height: 160px;
+  text-align: center;
+}
+
+
+.dot{
+  color: red;
+}

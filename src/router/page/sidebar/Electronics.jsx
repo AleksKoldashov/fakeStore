@@ -1,14 +1,18 @@
+import { useSelector } from "react-redux";
 import Cart from "../../../components/UI/Cart";
-import { useGetCategoriesElectronicsQuery } from "../../../redux/apiProducts"
 import './styles/style.css'
 
 
 export default function Electronics(params) {
-    const {data: electronics, isLoading, error} = useGetCategoriesElectronicsQuery()
-    console.log(electronics);
+    
+    const electronics = useSelector(state=>state.basket.product)
+  
+     const NewArray=electronics.filter((item)=>item.category === 'electronics')
+     console.log(NewArray);
+ 
     return(
         <div className="electro">
-               {electronics?.map((item)=><Cart item={item}/>)} 
+               {NewArray?.map((item)=><Cart item={item}/>)} 
         </div>
     )
 }

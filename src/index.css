@@ -12,3 +12,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: "PT-Root-UI_Regular";
+  src: url("./fonts/ptrootui/PT-Root-UI_Regular.ttf");
+}
+@font-face {
+  font-family: "PT-Root-UI_Bold";
+  src: url("./fonts/ptrootui/PT-Root-UI_Bold.ttf");
+}
+
+@font-face {
+  font-family: "Rubik-Bold";
+  src: url("./fonts/Rubik/static/Rubik-Bold.ttf");
+}
+

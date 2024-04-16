@@ -6,7 +6,7 @@ export const apiProducts = createApi({
 
     endpoints: builder=>({
         getProducts: builder.query({
-            query:()=>``
+            query:(cat)=>`${cat}`
         }),
         getCategoriesElectronics: builder.query({
             query:()=>`category/electronics`

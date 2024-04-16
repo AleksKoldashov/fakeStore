@@ -1,14 +1,16 @@
+import { useSelector } from "react-redux";
 import Cart from "../../../components/UI/Cart";
-import { useGetCategoriesJeweleryQuery } from "../../../redux/apiProducts"
 import './styles/style.css'
 
 
 export default function Jewelery(params) {
-    const {data: jewelery, isLoading, error} = useGetCategoriesJeweleryQuery()
-    console.log(jewelery);
+    const jewelery = useSelector(state=>state.basket.product)
+
+    const NewArray=jewelery.filter((item)=>item.category === 'jewelery')
+     console.log(NewArray);
     return(
         <div className="electro">
-               {jewelery?.map((item)=><Cart item={item}/>)} 
+               {NewArray?.map((item)=><Cart item={item}/>)} 
         </div>
     )
 }

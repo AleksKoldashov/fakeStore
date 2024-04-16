@@ -16,21 +16,27 @@ export  const basketSlice =createSlice({
                 state.order = addItemToCart(state.order, action.payload)
             },
             incProduct: (state,action) => {
-              state.order=state.order.map(item=>item.id === action.payload ? {...item, quantity: item.quantity +1} : {...item})
+              // state.order=state.order.map(item=>item.id === action.payload ? {...item, quantity: item.quantity +1} : {...item})
+              state.product=state.product.map(item=>item.id === action.payload ? {...item, quantity: item.quantity === undefined ? 1 : item.quantity +1} : {...item})
                   },
             decrProduct: (state,action) => {
-              state.order=state.order.map(item=>item.id === action.payload ? {...item, quantity: item.quantity > 0 ? item.quantity-1: 0} : {...item})     
+              state.order=state.order.map(item=>item.id === action.payload ? {...item, quantity: item.quantity > 0 ? item.quantity-1: 0} : {...item})
+              state.product=state.product.map(item=>item.id === action.payload ? {...item, quantity: item.quantity> 0 ? item.quantity-1: 0} : {...item})     
                   },
         },
         extraReducers:  (builder) =>{
-        builder
-        .addCase(fetchProducts.pending,(state, action)=>{
-          state.status = 'loading'
-        })
-        .addCase(fetchProducts.fulfilled, (state, action)=>{
-          state.product = [1]
-          state.status = 'idle'
-    })
+          builder
+          .addCase(fetchProducts.pending,(state, action)=>{
+              state.status = 'loading'
+          })
+          .addCase(fetchProducts.fulfilled, (state, action)=>{
+                state.product=(action.payload)
+                state.status = 'idle'
+          })
+          .addCase(fetchProducts.rejected,(state, action)=>{
+              state.status = 'rejected'
+              state.error = action.payload
+          })
       }
 })
 
